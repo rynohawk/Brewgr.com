@@ -32,11 +32,14 @@ namespace Brewgr.Web
 
 			bundles.Add(new StyleBundle("~/bundles/css")
 				.Include(
-					"~/css/smoothness/jquery-ui-1.10.3.custom.css",
-					"~/css/style.css",
-					"~/css/custom.css",
-					"~/css/builder.css",
-					"~/css/colorbox.css"));
-		} 
+                    //"~/css/smoothness/jquery-ui-1.10.3.custom.css",
+                    //"~/css/style.css",
+                    //"~/css/custom.css",
+                    //"~/css/builder.css",
+                    //"~/css/colorbox.css"));
+                    "~/css/structure.css",
+                    "~/css/content.css",
+                    "~/css/lib/colorbox.css"));
+        } 
 	}
 }

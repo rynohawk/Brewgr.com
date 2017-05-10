@@ -202,7 +202,8 @@
     <Compile Include="Controllers\AuthController.cs" />
     <Compile Include="Controllers\BrewSessionController.cs" />
     <Compile Include="Controllers\BundleHelperController.cs" />
-    <Compile Include="Controllers\ContentController.cs" />
+    <Compile Include="Controllers\CalculationsController.cs" />
+    <Compile Include="Controllers\CalculatorsController.cs" />
     <Compile Include="Controllers\DashboardController.cs" />
     <Compile Include="Controllers\IngredientController.cs" />
     <Compile Include="Controllers\MarketingController.cs" />
@@ -322,11 +323,16 @@
     <Content Include="crossdomain.xml" />
     <Content Include="css\builder.css" />
     <Content Include="css\colorbox.css" />
+    <Content Include="css\content.css" />
+    <Content Include="css\lib\bootstrap.min.css" />
+    <Content Include="css\lib\colorbox.css" />
     <Content Include="css\partners.css" />
     <Content Include="css\sendtoshop.css" />
     <Content Include="css\smoothness\images\animated-overlay.gif" />
     <Content Include="css\smoothness\jquery-ui-1.10.3.custom.css" />
+    <Content Include="css\structure.css" />
     <Content Include="img\baby-hop-cones.jpg" />
+    <Content Include="img\back_to_top_btn.png" />
     <Content Include="img\chosen-sprite%402x.png" />
     <Content Include="img\chosen-sprite.png" />
     <Content Include="img\colorbox\border.png" />
@@ -355,9 +361,16 @@
     <Content Include="img\hop-cone.jpg" />
     <Content Include="img\irish-moss.jpg" />
     <Content Include="img\jqueryui\smoothness\animated-overlay.gif" />
+    <Content Include="img\mail_contact.png" />
     <Content Include="img\mash2.png" />
     <Content Include="img\pliny-the-elder.jpg" />
     <Content Include="img\search-button.png" />
+    <Content Include="img\social_icons\facebook.png" />
+    <Content Include="img\social_icons\github.png" />
+    <Content Include="img\social_icons\instagram.png" />
+    <Content Include="img\social_icons\twitter.png" />
+    <Content Include="img\social_icons\youtube-2.png" />
+    <Content Include="img\social_icons\youtube.png" />
     <Content Include="img\spice-jars.jpg" />
     <Content Include="img\yeast-cake.jpg" />
     <Content Include="img\yeast-vial.jpg" />
@@ -2228,31 +2241,10 @@
     <Content Include="Views\Shared\_Comment.cshtml" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Views\Content\Calculations.cshtml" />
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="Views\Content\CalculationsOriginalGravity.cshtml" />
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="Views\Content\_CalculationsNavigation.cshtml" />
-  </ItemGroup>
-  <ItemGroup>
     <Content Include="Views\Recipe\_BuilderStepTable.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Views\Recipe\_AddRecipeComment.cshtml" />
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="Views\Content\CalculationsFinalGravity.cshtml" />
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="Views\Content\CalculationsSRM.cshtml" />
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="Views\Content\CalculationsAlcohol.cshtml" />
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="Views\Content\CalculationsCalories.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Views\Shared\_StringWithLineBreaks.cshtml" />
@@ -2314,30 +2306,12 @@
   <ItemGroup>
     <Content Include="Views\Recipe\_TastingNoteDetail.cshtml" />
   </ItemGroup>
-  <ItemGroup>
-    <Content Include="Views\Content\CalculationsIBU.cshtml" />
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="Views\Content\CalculatorsHydrometerTemp.cshtml" />
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="Views\Content\_CalculatorsNavigation.cshtml" />
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="Views\Content\Calculators.cshtml" />
-  </ItemGroup>
   <ItemGroup />
   <ItemGroup>
     <Content Include="Views\User\_PersonalInfo.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Views\User\_Notifications.cshtml" />
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="Views\Content\CalculatorsMashSpargeWater.cshtml" />
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="Views\Content\_WaterInfusionForm.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Views\Recipe\ImportBeerXmlDialog.cshtml" />
@@ -2499,9 +2473,6 @@
     <Content Include="Views\SendToShop\Create.cshtml" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Views\Content\_WaterInfusionCalculatorScriptInit.cshtml" />
-  </ItemGroup>
-  <ItemGroup>
     <Content Include="Views\BundleHelper\GetRenderedScriptBundle.cshtml" />
   </ItemGroup>
   <ItemGroup>
@@ -2540,6 +2511,22 @@
   <ItemGroup>
     <None Include="Properties\PublishProfiles\BrewgrToAWS.pubxml" />
     <None Include="Properties\PublishProfiles\FileDeploy.pubxml" />
+    <Content Include="Views\Shared\_ResponsiveAd.cshtml" />
+    <Content Include="Views\Calculations\Calculations.cshtml" />
+    <Content Include="Views\Calculations\CalculationsAlcohol.cshtml" />
+    <Content Include="Views\Calculations\CalculationsCalories.cshtml" />
+    <Content Include="Views\Calculations\CalculationsFinalGravity.cshtml" />
+    <Content Include="Views\Calculations\CalculationsIBU.cshtml" />
+    <Content Include="Views\Calculations\CalculationsOriginalGravity.cshtml" />
+    <Content Include="Views\Calculations\CalculationsSRM.cshtml" />
+    <Content Include="Views\Calculations\_CalculationsNavigation.cshtml" />
+    <Content Include="Views\Calculators\Calculators.cshtml" />
+    <Content Include="Views\Calculators\CalculatorsHydrometerTemp.cshtml" />
+    <Content Include="Views\Calculators\CalculatorsMashSpargeWater.cshtml" />
+    <Content Include="Views\Calculators\_CalculatorsNavigation.cshtml" />
+    <Content Include="Views\Calculators\_CalculatorsSubLayout.cshtml" />
+    <Content Include="Views\Calculators\_WaterInfusionCalculatorScriptInit.cshtml" />
+    <Content Include="Views\Calculators\_WaterInfusionForm.cshtml" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
