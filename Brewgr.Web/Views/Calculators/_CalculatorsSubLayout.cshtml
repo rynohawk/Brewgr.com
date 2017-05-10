@@ -8,6 +8,9 @@
         <div class="col-md-3 visible-lg visible-md">
             <h2 class="page-header small">Homebrew Calculators</h2>
             <ul class="nav nav-pills nav-stacked">
+                <li class="@(url.EndsWith("/calculators") ? "active" : "")">
+                    <a href="@Url.Action("Calculators", "Calculators", null, "http")">Calculators Home</a>
+                </li>
                 <li class="@(url.Contains("hydrometer-correction") ? "active" : "")">
                     <a href="@Url.Action("CalculatorsHydrometerTemp", "Calculators", null, "http")">Hydrometer Temperature Correction Calculator</a>
                 </li>
