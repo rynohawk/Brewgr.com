@@ -206,12 +206,12 @@ var util =
     },
 
     /// Converts qt/lb to l/kg
-    qt_per_lb_To_l_per_kg (qtPerLb) {
+    qt_per_lb_To_l_per_kg: function (qtPerLb) {
         return qtPerLb * 2.08635;
     },
 
     /// Converts l/kg to qt/lb
-    l_per_kg_To_qt_per_lb (lPerKg) {
+    l_per_kg_To_qt_per_lb: function (lPerKg) {
         return lPerKg * 0.47931;
     }
 };
